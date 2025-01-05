@@ -28,8 +28,6 @@ def run(model: str, max_results: int, score_threshold: float) -> None:
                 "infant cry" in category.category_name.lower()) and category.score > score_threshold:
                 print(f"[{detected_time:.3f}] Baby is crying! Detected: {category.category_name}, Confidence: {category.score:.2f}")
                 detected = True
-        if not detected:
-            print(f"[{detected_time:.3f}] No baby crying detected.")
 
     # Initialize the audio classification model.
     base_options = python.BaseOptions(model_asset_path=model)
